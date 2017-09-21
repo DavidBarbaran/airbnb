@@ -1,8 +1,10 @@
-package airbnb.doapps.me.airbnb;
+package airbnb.doapps.me.airbnb.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import airbnb.doapps.me.airbnb.R;
 
 public class SplashActivity extends AppCompatActivity {
 

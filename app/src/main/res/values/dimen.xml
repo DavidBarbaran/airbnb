@@ -21,4 +21,21 @@
     <dimen name="suggestion_body_text_size">18sp</dimen>
     <dimen name="search_bar_text_size">16sp</dimen>
 
+    <!--size sp-->
+
+    <dimen name="size24">24sp</dimen>
+    <dimen name="size12">12sp</dimen>
+    <dimen name="size14">14sp</dimen>
+    <dimen name="size16">16sp</dimen>
+
+    <!-- spacing -->
+
+    <dimen name="spacing0">0dp</dimen>
+    <dimen name="spacing8">8dp</dimen>
+    <dimen name="spacing12">12dp</dimen>
+    <dimen name="spacing20">20dp</dimen>
+    <dimen name="spacing24">24dp</dimen>
+
+
+
 </resources>

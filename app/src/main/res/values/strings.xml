@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Airbnb</string>
+    <string name="image_transition_name">ImageTransition</string>
 </resources>
