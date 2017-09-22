@@ -3,7 +3,6 @@
     <dimen name="spacing4">4dp</dimen>
     <dimen name="spacing16">16dp</dimen>
 
-
     <dimen name="search_bar_height">48dp</dimen>
     <dimen name="search_bar_left_icon_left_margin">4dp</dimen>
     <dimen name="search_bar_right_icon_right_margin">4dp</dimen>
@@ -23,14 +22,15 @@
 
     <!--size sp-->
 
-    <dimen name="size24">24sp</dimen>
-    <dimen name="size11">11sp</dimen>
-    <dimen name="size12">12sp</dimen>
-    <dimen name="size14">14sp</dimen>
-    <dimen name="size16">16sp</dimen>
-    <dimen name="size17">17sp</dimen>
-    <dimen name="size18">18sp</dimen>
-    <dimen name="size20">20sp</dimen>
+    <dimen name="text24">24sp</dimen>
+    <dimen name="text11">11sp</dimen>
+    <dimen name="text12">12sp</dimen>
+    <dimen name="text14">14sp</dimen>
+    <dimen name="text15">15sp</dimen>
+    <dimen name="text16">16sp</dimen>
+    <dimen name="text17">17sp</dimen>
+    <dimen name="text18">18sp</dimen>
+    <dimen name="text20">20sp</dimen>
 
     <!-- spacing -->
 
@@ -39,7 +39,5 @@
     <dimen name="spacing12">12dp</dimen>
     <dimen name="spacing20">20dp</dimen>
     <dimen name="spacing24">24dp</dimen>
-
-
 
 </resources>

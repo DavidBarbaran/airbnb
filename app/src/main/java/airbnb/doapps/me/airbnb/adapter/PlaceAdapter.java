@@ -1,27 +1,18 @@
 package airbnb.doapps.me.airbnb.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import airbnb.doapps.me.airbnb.R;
-import airbnb.doapps.me.airbnb.activity.PlaceDetailActivity;
-import airbnb.doapps.me.airbnb.model.PlaceItem;
+import airbnb.doapps.me.airbnb.model.Place;
 import airbnb.doapps.me.airbnb.util.OnItemClickListener;
 
 /**
@@ -30,17 +21,17 @@ import airbnb.doapps.me.airbnb.util.OnItemClickListener;
 
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemPlaceViewHolder> {
 
-    private List<PlaceItem> placeItemList;
+    private List<Place> placeItemList;
     private Context mContext;
     private static OnItemClickListener onItemClickListener;
 
-    public PlaceAdapter(List<PlaceItem> placeItemList, Context mContext, OnItemClickListener onItemClickListener) {
+    public PlaceAdapter(List<Place> placeItemList, Context mContext, OnItemClickListener onItemClickListener) {
         this.placeItemList = placeItemList;
         this.mContext = mContext;
         this.onItemClickListener  = onItemClickListener;
     }
 
-    public PlaceAdapter(List<PlaceItem> placeItemList, Context mContext) {
+    public PlaceAdapter(List<Place> placeItemList, Context mContext) {
         this.placeItemList = placeItemList;
         this.mContext = mContext;
     }

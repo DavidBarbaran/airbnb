@@ -27,7 +27,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
-                android:background="@color/colorWhite"
+                android:background="@color/white"
                 android:scaleType="center"
                 android:src="@drawable/place"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -60,7 +60,7 @@
         android:text="CABAÑA ENTERA · 2 CAMAS"
         android:paddingTop="@dimen/spacing12"
         android:paddingBottom="@dimen/spacing4"
-        android:textSize="@dimen/size14"
+        android:textSize="@dimen/text14"
         android:gravity="center|left"
         android:textStyle="bold"/>
     <TextView
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Romantic Cabana with view"
-        android:textSize="@dimen/size24"
+        android:textSize="@dimen/text24"
         android:paddingBottom="@dimen/spacing4"
         android:gravity="center|left"
         android:textStyle="bold"
@@ -82,7 +82,7 @@
         android:paddingBottom="@dimen/spacing4"
         android:text="34 € por noche"
         android:textColor="@color/black"
-        android:textSize="@dimen/size16" />
+        android:textSize="@dimen/text16" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=" 105 · Superhost"
-            android:textSize="@dimen/size12"
+            android:textSize="@dimen/text12"
             android:paddingBottom="@dimen/spacing4"
             android:gravity="center|left"
             android:textColor="@color/black"/>

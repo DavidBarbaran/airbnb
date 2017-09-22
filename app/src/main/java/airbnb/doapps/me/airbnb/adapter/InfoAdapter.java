@@ -9,14 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
 
 import airbnb.doapps.me.airbnb.R;
 import airbnb.doapps.me.airbnb.model.Info;
-import airbnb.doapps.me.airbnb.model.PlaceItem;
 
 /**
  * Created by 0x7b1 on 9/21/17.

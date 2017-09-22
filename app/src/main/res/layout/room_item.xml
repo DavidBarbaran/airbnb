@@ -16,9 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="24dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
- />
-
+        app:layout_constraintRight_toRightOf="parent" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -51,12 +49,7 @@
             android:text="Dormitorio 1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/room_imageView"
-            />
-
-
+            app:layout_constraintTop_toBottomOf="@+id/room_imageView" />
 
     </LinearLayout>
-
-
 </android.support.constraint.ConstraintLayout>

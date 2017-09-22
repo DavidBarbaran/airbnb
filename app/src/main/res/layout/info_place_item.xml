@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing4"
         android:text="6 huespedes"
-        android:textSize="@dimen/size11"
+        android:textSize="@dimen/text11"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
         app:layout_constraintLeft_toLeftOf="parent"

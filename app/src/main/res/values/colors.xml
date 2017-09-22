@@ -7,8 +7,9 @@
     <!---->
 
     <color name="transparent">#00000000</color>
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorTurquoise">#1ACFC6</color>
-    <color name="colorGray">#C1BFBF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="turquoise">#1ACFC6</color>
+    <color name="gray">#C1BFBF</color>
+    <color name="pink">#FD7E89</color>
 
 </resources>

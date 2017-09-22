@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             tools:context=".MainActivity"
-            android:background="@color/colorWhite">
+            android:background="@color/white">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/search_places_result_recycler"

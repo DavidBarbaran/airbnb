@@ -1,7 +1,6 @@
 package airbnb.doapps.me.airbnb.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
@@ -14,17 +13,17 @@ import android.widget.TextView;
 import java.util.List;
 
 import airbnb.doapps.me.airbnb.R;
-import airbnb.doapps.me.airbnb.model.Homeitem;
+import airbnb.doapps.me.airbnb.model.Home;
 
 /**
  * Created by jorgeek on 20/09/17.
  */
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CustomViewHolder> {
-    private List<Homeitem> homeItemList;
+    private List<Home> homeItemList;
     private Context mContext;
 
-    public HomeAdapter(Context context, List<Homeitem> feedItemList) {
+    public HomeAdapter(Context context, List<Home> feedItemList) {
         this.homeItemList = feedItemList;
         this.mContext = context;
     }
@@ -38,7 +37,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CustomViewHold
 
     @Override
     public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
-        Homeitem item = homeItemList.get(i);
+        Home item = homeItemList.get(i);
         item.setRecyclerView(customViewHolder.recycler);
         customViewHolder.tittleHeaderHometextView.setText(homeItemList.get(i).getTittle());
 

@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by jorgeek on 20/09/17.
  */
 
-public class PlaceItem implements Serializable{
+public class Place implements Serializable{
 
     private int imagePlace;
     private boolean likePlace;
@@ -19,7 +19,7 @@ public class PlaceItem implements Serializable{
     private int ratingPlace;
     private String calificationPlace;
 
-    /*public PlaceItem(int imagePlace, boolean likePlace, String tittlePlace, String descriptionPlace, String pricePlace, int ratingPlace, String calificationPlace) {
+    /*public Place(int imagePlace, boolean likePlace, String tittlePlace, String descriptionPlace, String pricePlace, int ratingPlace, String calificationPlace) {
         this.imagePlace = imagePlace;
         this.likePlace = likePlace;
         this.tittlePlace = tittlePlace;
@@ -30,7 +30,7 @@ public class PlaceItem implements Serializable{
     }*/
 
 
-    public PlaceItem(){
+    public Place(){
 
     }
 

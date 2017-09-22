@@ -1,244 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-    android:background="@color/colorWhite"
-            tools:context="airbnb.doapps.me.airbnb.activity.PlaceDetailActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context="airbnb.doapps.me.airbnb.activity.PlaceDetailActivity">
 
-            <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/detail_place_imageview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none"
-                >
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:transitionName="@string/image_transition_name" />
+
+            <!-- Data detail -->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing24"
+                android:layout_marginRight="@dimen/spacing24"
                 android:orientation="vertical">
 
-
-                <ImageView
-                    android:id="@+id/detail_place_imageview"
+                <TextView
+                    android:id="@+id/tittle_place_text"
                     android:layout_width="match_parent"
-                    android:transitionName="@string/image_transition_name"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-
-                    />
-
-                <!-- Data detail -->
+                    android:layout_marginBottom="@dimen/spacing12"
+                    android:layout_marginTop="@dimen/spacing12"
+                    android:text="Romantic cabaña with view"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="@dimen/spacing24"
-                    android:layout_marginRight="@dimen/spacing24">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Romantic cabaña with view"
-                        android:textStyle="bold"
-                        android:textSize="32sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="@dimen/spacing12"
-                        android:layout_marginBottom="@dimen/spacing8"/>
+                    android:weightSum="1">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:weightSum="1">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:weightSum="2">
 
-                        <LinearLayout
+                        <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:weightSum="2">
+                            android:gravity="bottom"
+                            android:text="Alojamiento entero"
+                            android:textColor="@color/black" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Alojamiento entero"
-                                android:textColor="@color/black"
-                                android:layout_weight="1"
-                                android:gravity="bottom"
-                                />
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|center_horizontal"
+                            android:layout_weight="1"
+                            android:text="Anfitrion: Francisco Reb" />
 
-                            <TextView
-                                android:id="@+id/textView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|center_horizontal"
-                                android:text="Anfitrion: Francisco Reb"
-                                android:layout_weight="1"/>
-
-
-                        </LinearLayout>
-
-
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            android:layout_height="60dp"
-                            android:layout_width="60dp"
-                            android:id="@+id/imageView1"
-                            android:src="@drawable/perfil"
-                            android:scaleType="fitCenter"
-                            app:riv_corner_radius="30dip"
-                            app:riv_border_width="2dip"
-                            app:riv_border_color="@color/transparent"
-                            app:riv_mutate_background="true"
-                            app:riv_oval="true" />
 
                     </LinearLayout>
 
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="#C1BFBF"
-                        android:layout_marginTop="@dimen/spacing12"/>
-
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/info_recycler"
-                        android:layout_marginTop="@dimen/spacing24"
-                        android:layout_marginBottom="@dimen/spacing24"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scrollbars="none" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="#C1BFBF"
-                        android:layout_marginBottom="@dimen/spacing24"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Traducir"
-                        android:textColor="@color/colorTurquoise"
-                        android:textSize="@dimen/size16" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sobre el alojamiento"
-                        android:textSize="@dimen/size16"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="@dimen/spacing8"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_random"
-                        android:textSize="@dimen/size16"
-                        android:layout_marginTop="@dimen/spacing4"
-                        android:ellipsize="end"
-                        android:maxLines="4"
-                        android:layout_marginBottom="@dimen/spacing4"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="El espacio"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/size16"
-                        android:layout_marginTop="@dimen/spacing4"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_random"
-                        android:layout_marginTop="@dimen/spacing4"
-                        android:textSize="@dimen/size16"
-                        android:ellipsize="end"
-                        android:maxLines="2"
-                        android:layout_marginBottom="@dimen/spacing4"
-                        />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="#C1BFBF"
-                        android:layout_marginTop="@dimen/spacing12"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Lugares para dormir"
-                        android:layout_marginTop="@dimen/spacing20"
-                        android:textSize="@dimen/size18"
-                        android:layout_marginBottom="@dimen/spacing20"
-                        android:textColor="@color/black"/>
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/perfil"
+                        app:riv_border_color="@color/transparent"
+                        app:riv_border_width="2dip"
+                        app:riv_corner_radius="30dip"
+                        app:riv_mutate_background="true"
+                        app:riv_oval="true" />
 
                 </LinearLayout>
 
-                <!-- Lugares para dormir-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/spacing12"
+                    android:background="#C1BFBF" />
 
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/room_recycler"
-                    android:paddingLeft="@dimen/spacing24"
-                    android:clipToPadding="false"
+                    android:id="@+id/info_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing24"
+                    android:layout_marginTop="@dimen/spacing24"
                     android:scrollbars="none" />
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="@dimen/spacing24"
-                    android:layout_marginRight="@dimen/spacing24">
-
-
-                    <View
+                <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:background="#C1BFBF"
-                    android:layout_marginTop="@dimen/spacing12"/>
+                    android:layout_marginBottom="@dimen/spacing24"
+                    android:background="#C1BFBF" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:text="Minimo 1 noche"
-                        android:gravity="center|left"
-                        android:textSize="@dimen/size16"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="#C1BFBF" />
-
-
-
-                    </LinearLayout>
-
-
-                <com.google.android.gms.maps.MapView
-                    android:id="@+id/mapView"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Traducir"
+                    android:textColor="@color/turquoise"
+                    android:textSize="@dimen/text16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing8"
+                    android:text="Sobre el alojamiento"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing4"
+                    android:layout_marginTop="@dimen/spacing4"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:text="@string/text_random"
+                    android:textSize="@dimen/text16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing4"
+                    android:text="El espacio"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing4"
+                    android:layout_marginTop="@dimen/spacing4"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@string/text_random"
+                    android:textSize="@dimen/text16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/spacing12"
+                    android:background="#C1BFBF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing20"
+                    android:layout_marginTop="@dimen/spacing20"
+                    android:text="Lugares para dormir"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text18" />
+
+            </LinearLayout>
+
+            <!-- Lugares para dormir-->
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/room_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingLeft="@dimen/spacing24"
+                android:scrollbars="none" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing24"
+                android:layout_marginRight="@dimen/spacing24"
+                android:orientation="vertical">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/spacing12"
+                    android:background="#C1BFBF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="center|left"
+                    android:text="Minimo 1 noche"
+                    android:textSize="@dimen/text16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginBottom="@dimen/spacing12"
+                    android:background="#C1BFBF" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text="Servicios"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text16"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/service_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing20"
+                    android:layout_marginTop="@dimen/spacing8" />
 
 
             </LinearLayout>
 
-            </ScrollView>
 
-            <include
-                android:id="@+id/include"
-                layout="@layout/place_toolbar"
+            <FrameLayout
+                android:id="@+id/container_map"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-        </RelativeLayout>
+                android:layout_height="300dp" />
 
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0.4dp"
+                android:background="#C1BFBF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing12"
+                android:layout_marginEnd="@dimen/spacing24"
+                android:layout_marginRight="@dimen/spacing24"
+                android:layout_marginTop="@dimen/spacing12"
+                android:background="@drawable/layout_rounded_pink"
+                android:paddingLeft="@dimen/spacing20"
+                android:paddingRight="@dimen/spacing20"
+                android:text="Comprobar\ndisponibilidad"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text15"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/spacing24"
+                android:layout_marginLeft="@dimen/spacing24"
+                android:layout_marginRight="@dimen/spacing24"
+                android:layout_marginStart="@dimen/spacing24"
+                android:gravity="center|center|center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/button2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="34 € por noche"
+                    android:textSize="@dimen/text16" />
+
+                <RatingBar
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:stepSize="0.1" />
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/place_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

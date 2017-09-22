@@ -10,7 +10,7 @@
 
     <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <item name="elevation">0dp</item>
-        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/white</item>
         <!-- Support library compatibility -->
     <item name="windowActionBarOverlay">true</item>
 </style>

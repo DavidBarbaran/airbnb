@@ -8,14 +8,14 @@ import java.util.List;
  * Created by jorgeek on 20/09/17.
  */
 
-public class Homeitem {
+public class Home {
 
     private String tittle;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private int orientation;
 
-    public Homeitem(String tittle, RecyclerView.Adapter adapter, int orientation) {
+    public Home(String tittle, RecyclerView.Adapter adapter, int orientation) {
         this.tittle = tittle;
         this.adapter = adapter;
         this.orientation = orientation;

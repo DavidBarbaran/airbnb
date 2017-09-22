@@ -1,6 +1,6 @@
 package airbnb.doapps.me.airbnb.activity;
 
-import android.os.Build;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,12 +18,13 @@ import java.util.List;
 import airbnb.doapps.me.airbnb.R;
 import airbnb.doapps.me.airbnb.adapter.InfoAdapter;
 import airbnb.doapps.me.airbnb.adapter.RoomAdapter;
-import airbnb.doapps.me.airbnb.model.Homeitem;
+import airbnb.doapps.me.airbnb.fragment.MapsFragment;
 import airbnb.doapps.me.airbnb.model.Info;
-import airbnb.doapps.me.airbnb.model.PlaceItem;
+import airbnb.doapps.me.airbnb.model.Place;
 import airbnb.doapps.me.airbnb.model.Room;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PlaceDetailActivity extends AppCompatActivity {
 
@@ -38,6 +39,7 @@ public class PlaceDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.room_recycler)
     RecyclerView roomRecycler;
+
 
     private LinearLayoutManager horizontalLayoutManager;
 
@@ -54,7 +56,7 @@ public class PlaceDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_place_detail);
         ButterKnife.bind(this);
 
-        PlaceItem item = (PlaceItem) getIntent().getSerializableExtra("item");
+        Place item = (Place) getIntent().getSerializableExtra("item");
         detailPlaceImageview.setImageResource(item.getImagePlace());
 
         // Custom toolbar
@@ -96,7 +98,21 @@ public class PlaceDetailActivity extends AppCompatActivity {
         setRoomData();
 
 
+        // Google Maps
 
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.container_map, new MapsFragment(), "map")
+                .disallowAddToBackStack()
+                .commit();
+
+
+    }
+
+    @OnClick(R.id.tittle_place_text)
+    public void startMapActivity(){
+        startActivity(new Intent(this, MapsFragment.class));
     }
 
     private void setInfoData(){
