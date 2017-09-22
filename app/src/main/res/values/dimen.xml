@@ -24,9 +24,13 @@
     <!--size sp-->
 
     <dimen name="size24">24sp</dimen>
+    <dimen name="size11">11sp</dimen>
     <dimen name="size12">12sp</dimen>
     <dimen name="size14">14sp</dimen>
     <dimen name="size16">16sp</dimen>
+    <dimen name="size17">17sp</dimen>
+    <dimen name="size18">18sp</dimen>
+    <dimen name="size20">20sp</dimen>
 
     <!-- spacing -->
 
