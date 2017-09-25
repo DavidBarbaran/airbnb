@@ -9,13 +9,10 @@
 
         app:showAsAction="always" />
     <item
-        android:id="@+id/share2"
+        android:id="@+id/like"
         android:orderInCategory="1"
-        android:text="Get"
         app:showAsAction="always"
-        android:title="Share"
-        app:actionViewClass="airbnb.doapps.me.airbnb.util.LikeButton"
-
+        android:title="like"
+        android:actionViewClass="airbnb.doapps.me.airbnb.util.LikeButton"
         />
-
 </menu>

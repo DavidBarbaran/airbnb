@@ -1,16 +1,31 @@
 package airbnb.doapps.me.airbnb.activity;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.like.LikeButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +55,17 @@ public class PlaceDetailActivity extends AppCompatActivity {
     @BindView(R.id.room_recycler)
     RecyclerView roomRecycler;
 
+    @BindView(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout collapsingToolbar;
+
+    @BindView(R.id.appbar)
+    AppBarLayout appBar;
+
+    @BindView(R.id.share_button)
+    ImageButton shareButton;
+
+    @BindView(R.id.heart_button)
+    LikeButton heartButton;
 
     private LinearLayoutManager horizontalLayoutManager;
 
@@ -48,7 +74,6 @@ public class PlaceDetailActivity extends AppCompatActivity {
 
     private RoomAdapter roomAdapter;
     private List<Room> listRoom = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,15 +124,48 @@ public class PlaceDetailActivity extends AppCompatActivity {
 
 
         // Google Maps
-
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.container_map, new MapsFragment(), "map")
                 .disallowAddToBackStack()
                 .commit();
 
+        // Toolbar Collapsing efect change icons effects
 
+
+        appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+
+                if ((collapsingToolbar.getHeight() + verticalOffset) < (2 * ViewCompat.getMinimumHeight(collapsingToolbar))) {
+                    transparentToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            shareButton.getBackground().setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
+                            Drawable d = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_like_black);
+                            heartButton.setUnlikeDrawable(d);
+
+                        }
+                    });
+
+                } else {
+                    transparentToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            shareButton.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+                            Drawable d = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_like_white);
+                            heartButton.setUnlikeDrawable(d);
+
+
+                        }
+                    });
+                }
+            }
+        });
     }
 
     @OnClick(R.id.tittle_place_text)
@@ -126,23 +184,5 @@ public class PlaceDetailActivity extends AppCompatActivity {
         listRoom.add(new Room(R.drawable.ic_bed,"Dormitorio 1","1 cama king size"));
         listRoom.add(new Room(R.drawable.ic_coach,"Zonas comunes","1 sófa"));
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.action_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.share:
-
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 }

@@ -45,7 +45,7 @@
                 app:icon_size="25dp"
                 app:icon_type="heart"
                 app:like_drawable="@drawable/ic_like_pressed"
-                app:unlike_drawable="@drawable/ic_like"
+                app:unlike_drawable="@drawable/ic_like_white"
                 app:layout_constraintRight_toRightOf="@+id/place_imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
