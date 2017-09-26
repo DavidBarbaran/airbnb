@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import airbnb.doapps.me.airbnb.R;
-import airbnb.doapps.me.airbnb.model.Info;
 import airbnb.doapps.me.airbnb.model.Room;
 
 /**
@@ -37,9 +36,9 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.RoomViewHolder
 
     @Override
     public void onBindViewHolder(RoomViewHolder holder, int position) {
-        holder.roomImageView.setImageResource(infoList.get(position).getImageRoom());
-        holder.tittleRoomTextView.setText(infoList.get(position).getTittleRoom());
-        holder.descriptionRoomTextView.setText(infoList.get(position).getDescriptionRoom());
+        holder.roomImageView.setImageResource(infoList.get(position).getImage());
+        holder.tittleRoomTextView.setText(infoList.get(position).getTittle());
+        holder.descriptionRoomTextView.setText(infoList.get(position).getDescription());
     }
 
     @Override

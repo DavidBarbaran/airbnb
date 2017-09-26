@@ -6,37 +6,37 @@ package airbnb.doapps.me.airbnb.model;
 
 public class Room {
 
-    private int imageRoom;
-    private String tittleRoom;
-    private String descriptionRoom;
+    private int image;
+    private String tittle;
+    private String description;
 
-    public Room(int imageRoom, String tittleRoom, String descriptionRoom) {
-        this.imageRoom = imageRoom;
-        this.tittleRoom = tittleRoom;
-        this.descriptionRoom = descriptionRoom;
+    public Room(int image, String tittle, String description) {
+        this.image = image;
+        this.tittle = tittle;
+        this.description = description;
     }
 
-    public int getImageRoom() {
-        return imageRoom;
+    public int getImage() {
+        return image;
     }
 
-    public void setImageRoom(int imageRoom) {
-        this.imageRoom = imageRoom;
+    public void setImage(int image) {
+        this.image = image;
     }
 
-    public String getTittleRoom() {
-        return tittleRoom;
+    public String getTittle() {
+        return tittle;
     }
 
-    public void setTittleRoom(String tittleRoom) {
-        this.tittleRoom = tittleRoom;
+    public void setTittle(String tittle) {
+        this.tittle = tittle;
     }
 
-    public String getDescriptionRoom() {
-        return descriptionRoom;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriptionRoom(String descriptionRoom) {
-        this.descriptionRoom = descriptionRoom;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

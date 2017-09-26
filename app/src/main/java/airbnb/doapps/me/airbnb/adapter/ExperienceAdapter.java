@@ -19,22 +19,22 @@ import airbnb.doapps.me.airbnb.model.Place;
 import airbnb.doapps.me.airbnb.util.OnItemClickListener;
 
 /**
- * Created by jorgeek on 20/09/17.
+ * Created by jorgeek on 26/09/17.
  */
 
-public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemPlaceViewHolder> {
+public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceAdapter.ItemExpViewHolder>{
 
     private List<Place> placeItemList;
     private Context mContext;
     private static OnItemClickListener onItemClickListener;
 
-    public PlaceAdapter(List<Place> placeItemList, Context mContext, OnItemClickListener onItemClickListener) {
+    public ExperienceAdapter(List<Place> placeItemList, Context mContext, OnItemClickListener onItemClickListener) {
         this.placeItemList = placeItemList;
         this.mContext = mContext;
         this.onItemClickListener  = onItemClickListener;
     }
 
-    public PlaceAdapter(List<Place> placeItemList, Context mContext) {
+    public ExperienceAdapter(List<Place> placeItemList, Context mContext) {
         this.placeItemList = placeItemList;
         this.mContext = mContext;
     }
@@ -44,16 +44,16 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemPlaceVie
     }
 
     @Override
-    public ItemPlaceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.place_item, parent,false);
-        PlaceAdapter.ItemPlaceViewHolder viewHolder = new PlaceAdapter.ItemPlaceViewHolder(view);
-        view.getLayoutParams().width =  (getScreenWidth());
+    public ExperienceAdapter.ItemExpViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.experience_item, parent,false);
+        ExperienceAdapter.ItemExpViewHolder viewHolder = new ExperienceAdapter.ItemExpViewHolder(view);
+        view.getLayoutParams().width =  (getScreenWidth()/2);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(final ItemPlaceViewHolder holder, final int position) {
-        holder.imagePlace.setImageResource(placeItemList.get(position).getImage());
+    public void onBindViewHolder(final ExperienceAdapter.ItemExpViewHolder holder, final int position) {
+        holder.expImage.setImageResource(placeItemList.get(position).getImage());
     }
 
     public int getScreenWidth() {
@@ -72,34 +72,36 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemPlaceVie
         return placeItemList.size();
     }
 
-    class ItemPlaceViewHolder extends RecyclerView.ViewHolder {
+    class ItemExpViewHolder extends RecyclerView.ViewHolder {
 
         protected final View rootView;
-        protected final ImageView imagePlace;
-        protected final TextView tittlePlaceTextView;
-        protected final TextView descriptionPlaceTextView;
-        protected final TextView priceTextView;
+        protected final ImageView expImage;
+        protected final TextView tittleExpTextView;
+        protected final TextView descriptionExpTextView;
+        protected final TextView priceExpTextView;
         protected final RatingBar calificationRatingBar;
         protected final TextView calificationTextView;
 
-        ItemPlaceViewHolder(View view) {
+        ItemExpViewHolder(View view) {
             super(view);
 
             rootView = view;
-            imagePlace =  view.findViewById(R.id.place_image);
-            tittlePlaceTextView =view.findViewById(R.id.tittle_place_textview);
-            descriptionPlaceTextView =view.findViewById(R.id.description_textview);
-            priceTextView = view.findViewById(R.id.price_place_textview);
+            expImage =  view.findViewById(R.id.experience_image);
+            tittleExpTextView =view.findViewById(R.id.tittle_expe_textview);
+            descriptionExpTextView =view.findViewById(R.id.description_exp_textview);
+            priceExpTextView = view.findViewById(R.id.price_exp_textview);
             calificationRatingBar = view.findViewById(R.id.calification_ratingbar);
             calificationTextView = view.findViewById(R.id.calification_textview);
 
-            rootView.setOnClickListener(new View.OnClickListener() {
+            /*rootView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int position  = ItemPlaceViewHolder.super.getAdapterPosition();
+                    int position  = PlaceAdapter.ItemPlaceViewHolder.super.getAdapterPosition();
                     onItemClickListener.onItemClick(view,position,placeItemList.get(position));
                 }
             });
+            */
         }
     }
+
 }

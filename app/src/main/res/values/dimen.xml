@@ -23,6 +23,7 @@
     <!--size sp-->
 
     <dimen name="text24">24sp</dimen>
+    <dimen name="text10">10sp</dimen>
     <dimen name="text11">11sp</dimen>
     <dimen name="text12">12sp</dimen>
     <dimen name="text14">14sp</dimen>
@@ -35,9 +36,12 @@
     <!-- spacing -->
 
     <dimen name="spacing0">0dp</dimen>
+    <dimen name="spacing6">6dp</dimen>
     <dimen name="spacing8">8dp</dimen>
     <dimen name="spacing12">12dp</dimen>
+    <dimen name="spacing18">18dp</dimen>
     <dimen name="spacing20">20dp</dimen>
     <dimen name="spacing24">24dp</dimen>
+    <dimen name="spacing80">80dp</dimen>
 
 </resources>

@@ -1,25 +1,17 @@
 package airbnb.doapps.me.airbnb.activity;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -33,6 +25,7 @@ import java.util.List;
 import airbnb.doapps.me.airbnb.R;
 import airbnb.doapps.me.airbnb.adapter.InfoAdapter;
 import airbnb.doapps.me.airbnb.adapter.RoomAdapter;
+import airbnb.doapps.me.airbnb.config.Setting;
 import airbnb.doapps.me.airbnb.fragment.MapsFragment;
 import airbnb.doapps.me.airbnb.model.Info;
 import airbnb.doapps.me.airbnb.model.Place;
@@ -81,8 +74,8 @@ public class PlaceDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_place_detail);
         ButterKnife.bind(this);
 
-        Place item = (Place) getIntent().getSerializableExtra("item");
-        detailPlaceImageview.setImageResource(item.getImagePlace());
+        Place item = (Place) getIntent().getSerializableExtra(Setting.KEY_ITEM);
+        detailPlaceImageview.setImageResource(item.getImage());
 
         // Custom toolbar
 
@@ -132,7 +125,6 @@ public class PlaceDetailActivity extends AppCompatActivity {
 
         // Toolbar Collapsing efect change icons effects
 
-
         appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
@@ -146,7 +138,6 @@ public class PlaceDetailActivity extends AppCompatActivity {
                             shareButton.getBackground().setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
                             Drawable d = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_like_black);
                             heartButton.setUnlikeDrawable(d);
-
                         }
                     });
 
@@ -183,6 +174,5 @@ public class PlaceDetailActivity extends AppCompatActivity {
     private void setRoomData(){
         listRoom.add(new Room(R.drawable.ic_bed,"Dormitorio 1","1 cama king size"));
         listRoom.add(new Room(R.drawable.ic_coach,"Zonas comunes","1 sófa"));
-
     }
 }

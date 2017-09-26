@@ -42,12 +42,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CustomViewHold
         customViewHolder.tittleHeaderHometextView.setText(homeItemList.get(i).getTittle());
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext, homeItemList.get(i).getOrientation(), false);
-        customViewHolder.recycler.setHasFixedSize(true);
+        //customViewHolder.recycler.setHasFixedSize(true);
         customViewHolder.recycler.setLayoutManager(mLayoutManager);
         customViewHolder.recycler.setAdapter(homeItemList.get(i).getAdapter());
 
         SnapHelper helper = new LinearSnapHelper();
-
         helper.attachToRecyclerView( customViewHolder.recycler);
     }
 

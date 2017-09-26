@@ -14,8 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import airbnb.doapps.me.airbnb.R;
+import airbnb.doapps.me.airbnb.adapter.ExperienceAdapter;
 import airbnb.doapps.me.airbnb.adapter.HomeAdapter;
 import airbnb.doapps.me.airbnb.adapter.PlaceAdapter;
+import airbnb.doapps.me.airbnb.config.Setting;
 import airbnb.doapps.me.airbnb.model.Home;
 import airbnb.doapps.me.airbnb.model.Place;
 import airbnb.doapps.me.airbnb.util.OnItemClickListener;
@@ -34,10 +36,6 @@ public class HomeActivity extends AppCompatActivity {
     private HomeAdapter homeAdapter;
     private List<Home> homeItemList = new ArrayList<>();
 
-    public static final String EXTRA_ANIMAL_ITEM = "animal_image_url";
-    public static final String EXTRA_ANIMAL_IMAGE_TRANSITION_NAME = "animal_image_transition_name";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         final List<Place> listItems = new ArrayList<>();
 
         Place place = new Place();
-        place.setImagePlace(R.drawable.place);
+        place.setImage(R.drawable.place);
 
         listItems.add(place);
         listItems.add(place);
@@ -73,11 +71,12 @@ public class HomeActivity extends AppCompatActivity {
 
         });
 
-        Home item = new Home("Alojamientos",placeAdapter,LinearLayoutManager.HORIZONTAL);
+        ExperienceAdapter experienceAdapter = new ExperienceAdapter(listItems,this);
 
+        homeItemList.add(new Home("Experiencias",experienceAdapter,LinearLayoutManager.HORIZONTAL));
+        Home item = new Home("Alojamientos",placeAdapter,LinearLayoutManager.HORIZONTAL);
         homeItemList.add(item);
 
-        homeItemList.add(new Home("Experiencias",placeAdapter,LinearLayoutManager.HORIZONTAL));
 
         homeItemList.add(new Home("Otros lugares...",placeAdapter,LinearLayoutManager.HORIZONTAL));
     }
@@ -89,7 +88,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void startSharedActivity(View view, int position, Place item) {
-        View sharedView = view.findViewById(R.id.place_imageView);
+        View sharedView = view.findViewById(R.id.place_image);
         String transitionName = getString(R.string.image_transition_name);
 
         ActivityOptionsCompat options =
@@ -97,7 +96,13 @@ public class HomeActivity extends AppCompatActivity {
                         this,  sharedView, transitionName);
 
         Intent intent = new Intent(this, PlaceDetailActivity.class);
-        intent.putExtra("item", item);
+        intent.putExtra(Setting.KEY_ITEM, item);
         ActivityCompat.startActivity(this, intent, options.toBundle());
     }
+
+//    @Override
+//    public void onBackPressed() {
+//        //super.onBackPressed();
+//        finishAffinity();
+//    }
 }

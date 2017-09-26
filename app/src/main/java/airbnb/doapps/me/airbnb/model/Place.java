@@ -1,8 +1,5 @@
 package airbnb.doapps.me.airbnb.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import java.io.Serializable;
 
 /**
@@ -11,85 +8,80 @@ import java.io.Serializable;
 
 public class Place implements Serializable{
 
-    private int imagePlace;
-    private boolean likePlace;
-    private String tittlePlace;
-    private String descriptionPlace;
-    private String pricePlace;
-    private int ratingPlace;
-    private String calificationPlace;
+    private int image;
+    private boolean like;
+    private String title;
+    private String description;
+    private String price;
+    private int rating;
+    private String calification;
 
-    /*public Place(int imagePlace, boolean likePlace, String tittlePlace, String descriptionPlace, String pricePlace, int ratingPlace, String calificationPlace) {
-        this.imagePlace = imagePlace;
-        this.likePlace = likePlace;
-        this.tittlePlace = tittlePlace;
-        this.descriptionPlace = descriptionPlace;
-        this.pricePlace = pricePlace;
-        this.ratingPlace = ratingPlace;
-        this.calificationPlace = calificationPlace;
-    }*/
-
+    public Place(int image, boolean like, String title, String description, String price, int rating, String calification) {
+        this.image = image;
+        this.like = like;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.rating = rating;
+        this.calification = calification;
+    }
 
     public Place(){
-
     }
 
-
-
-
-    public int getImagePlace() {
-        return imagePlace;
+    public int getImage() {
+        return image;
     }
 
-    public void setImagePlace(int imagePlace) {
-        this.imagePlace = imagePlace;
+    public void setImage(int image) {
+        this.image = image;
     }
 
-    public boolean isLikePlace() {
-        return likePlace;
+    public boolean isLike() {
+        return like;
     }
 
-    public void setLikePlace(boolean likePlace) {
-        this.likePlace = likePlace;
+    public void setLike(boolean like) {
+        this.like = like;
     }
 
-    public String getTittlePlace() {
-        return tittlePlace;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittlePlace(String tittlePlace) {
-        this.tittlePlace = tittlePlace;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getDescriptionPlace() {
-        return descriptionPlace;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriptionPlace(String descriptionPlace) {
-        this.descriptionPlace = descriptionPlace;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getPricePlace() {
-        return pricePlace;
+    public String getPrice() {
+        return price;
     }
 
-    public void setPricePlace(String pricePlace) {
-        this.pricePlace = pricePlace;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public int getRatingPlace() {
-        return ratingPlace;
+    public int getRating() {
+        return rating;
     }
 
-    public void setRatingPlace(int ratingPlace) {
-        this.ratingPlace = ratingPlace;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
-    public String getCalificationPlace() {
-        return calificationPlace;
+    public String getCalification() {
+        return calification;
     }
 
-    public void setCalificationPlace(String calificationPlace) {
-        this.calificationPlace = calificationPlace;
+    public void setCalification(String calification) {
+        this.calification = calification;
     }
 }
