@@ -15,6 +15,7 @@ import java.util.List;
 
 import airbnb.doapps.me.airbnb.R;
 import airbnb.doapps.me.airbnb.model.Info;
+import airbnb.doapps.me.airbnb.util.ScreenUtil;
 
 /**
  * Created by 0x7b1 on 9/21/17.
@@ -34,7 +35,9 @@ public class InfoAdapter  extends RecyclerView.Adapter<InfoAdapter.InfoViewHolde
     public InfoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.info_place_item, parent,false);
         InfoAdapter.InfoViewHolder viewHolder = new InfoAdapter.InfoViewHolder(view);
-        view.getLayoutParams().width = (int) (getScreenWidth() / 4); /// THIS LINE WILL DIVIDE OUR VIEW INTO NUMBERS OF PARTS
+        int spacing = (int) mContext.getResources().getDimension(R.dimen.spacing24);
+        int margin = (int) mContext.getResources().getDimension(R.dimen.spacing4);
+        view.getLayoutParams().width = (ScreenUtil.getScreenWidth(mContext) - (spacing*2)-(margin*8))/4;
 
         return viewHolder;
     }
@@ -50,16 +53,6 @@ public class InfoAdapter  extends RecyclerView.Adapter<InfoAdapter.InfoViewHolde
         return infoList.size();
     }
 
-    public int getScreenWidth() {
-
-        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int spacing = (int) mContext.getResources().getDimension(R.dimen.spacing24);
-        int margin = (int) mContext.getResources().getDimension(R.dimen.spacing4);
-        return size.x-(spacing*2)-(margin*8);
-    }
 
     class InfoViewHolder extends RecyclerView.ViewHolder {
 

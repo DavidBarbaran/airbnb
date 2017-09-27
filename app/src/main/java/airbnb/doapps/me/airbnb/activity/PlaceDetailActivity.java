@@ -150,8 +150,6 @@ public class PlaceDetailActivity extends AppCompatActivity {
                             shareButton.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
                             Drawable d = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_like_white);
                             heartButton.setUnlikeDrawable(d);
-
-
                         }
                     });
                 }

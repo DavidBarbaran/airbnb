@@ -1,6 +1,7 @@
 package airbnb.doapps.me.airbnb.model;
 
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 
 import java.util.List;
 
@@ -11,14 +12,16 @@ import java.util.List;
 public class Home {
 
     private String tittle;
-    private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private int orientation;
+    private SnapHelper snap;
+    private RecyclerView recyclerView;
 
-    public Home(String tittle, RecyclerView.Adapter adapter, int orientation) {
+    public Home(String tittle, RecyclerView.Adapter adapter, int orientation, SnapHelper snap) {
         this.tittle = tittle;
         this.adapter = adapter;
         this.orientation = orientation;
+        this.snap = snap;
     }
 
 
@@ -36,6 +39,14 @@ public class Home {
 
     public void setTittle(String tittle) {
         this.tittle = tittle;
+    }
+
+    public SnapHelper getSnap() {
+        return snap;
+    }
+
+    public void setSnap(SnapHelper snap) {
+        this.snap = snap;
     }
 
     public RecyclerView getRecyclerView() {

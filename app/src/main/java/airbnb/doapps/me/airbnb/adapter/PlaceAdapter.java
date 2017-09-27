@@ -17,6 +17,7 @@ import java.util.List;
 import airbnb.doapps.me.airbnb.R;
 import airbnb.doapps.me.airbnb.model.Place;
 import airbnb.doapps.me.airbnb.util.OnItemClickListener;
+import airbnb.doapps.me.airbnb.util.ScreenUtil;
 
 /**
  * Created by jorgeek on 20/09/17.
@@ -47,24 +48,15 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ItemPlaceVie
     public ItemPlaceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.place_item, parent,false);
         PlaceAdapter.ItemPlaceViewHolder viewHolder = new PlaceAdapter.ItemPlaceViewHolder(view);
-        view.getLayoutParams().width =  (getScreenWidth());
+        int spacing = (int) mContext.getResources().getDimension(R.dimen.spacing24);
+        int margin = (int) mContext.getResources().getDimension(R.dimen.spacing6);
+        view.getLayoutParams().width = ScreenUtil.getScreenWidth(mContext)-(spacing*2)-(margin*2);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(final ItemPlaceViewHolder holder, final int position) {
         holder.imagePlace.setImageResource(placeItemList.get(position).getImage());
-    }
-
-    public int getScreenWidth() {
-
-        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int spacing = (int) mContext.getResources().getDimension(R.dimen.spacing24);
-        int margin = (int) mContext.getResources().getDimension(R.dimen.spacing6);
-        return size.x-(spacing*2)-(margin*2);
     }
 
     @Override

@@ -28,7 +28,7 @@
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:background="@color/white"
-                android:scaleType="center"
+                android:scaleType="centerCrop"
                 android:src="@drawable/place"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -25,7 +25,7 @@
         <ImageView
             android:id="@+id/detail_place_imageview"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="220dp"
             android:adjustViewBounds="true"
             android:src="@drawable/place"
             android:fitsSystemWindows="true"
@@ -307,7 +307,7 @@
             <FrameLayout
                 android:id="@+id/container_map"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="@dimen/size300" />
 
 
         </LinearLayout>

@@ -5,14 +5,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
+
 import java.util.List;
 
 import airbnb.doapps.me.airbnb.R;
+import airbnb.doapps.me.airbnb.config.Setting;
 import airbnb.doapps.me.airbnb.model.Home;
 
 /**
@@ -46,8 +50,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CustomViewHold
         customViewHolder.recycler.setLayoutManager(mLayoutManager);
         customViewHolder.recycler.setAdapter(homeItemList.get(i).getAdapter());
 
-        SnapHelper helper = new LinearSnapHelper();
-        helper.attachToRecyclerView( customViewHolder.recycler);
+
+        if(homeItemList.get(i).getSnap()!=null){
+            homeItemList.get(i).getSnap().attachToRecyclerView( customViewHolder.recycler);
+        }
+
     }
 
     @Override

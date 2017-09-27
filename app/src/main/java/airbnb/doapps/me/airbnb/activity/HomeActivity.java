@@ -7,8 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
+import android.view.Gravity;
 import android.view.View;
+
+import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,12 +78,14 @@ public class HomeActivity extends AppCompatActivity {
 
         ExperienceAdapter experienceAdapter = new ExperienceAdapter(listItems,this);
 
-        homeItemList.add(new Home("Experiencias",experienceAdapter,LinearLayoutManager.HORIZONTAL));
-        Home item = new Home("Alojamientos",placeAdapter,LinearLayoutManager.HORIZONTAL);
+        SnapHelper snapHelperStart = new GravitySnapHelper(Gravity.START);
+        homeItemList.add(new Home("Experiencias",experienceAdapter,LinearLayoutManager.HORIZONTAL, snapHelperStart));
+
+
+        SnapHelper snapHelper = new LinearSnapHelper();
+        Home item = new Home("Alojamientos",placeAdapter,LinearLayoutManager.HORIZONTAL,snapHelper);
         homeItemList.add(item);
-
-
-        homeItemList.add(new Home("Otros lugares...",placeAdapter,LinearLayoutManager.HORIZONTAL));
+        homeItemList.add(new Home("Otros lugares...",placeAdapter,LinearLayoutManager.HORIZONTAL,snapHelper));
     }
 
     @OnClick(R.id.search_bar_text)
